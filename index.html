@@ -3,13 +3,49 @@
 <head>
     <title>康舟診所 線上預約</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: sans-serif;
-            max-width: 500px;
-            margin: 50px auto;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('background.png') center/cover no-repeat fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 20px;
-            background: #f5f5f5;
+        }
+        .container {
+            background: rgba(255,255,255,0.95);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
             text-align: center;
+            animation: fadeInUp 0.8s ease;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .logo {
+            width: 120px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         h1 {
             color: #2c5282;
@@ -17,23 +53,30 @@
         }
         .subtitle {
             color: #666;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         .btn {
             display: block;
             width: 100%;
             padding: 18px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border: none;
             border-radius: 10px;
             font-size: 18px;
             cursor: pointer;
             text-decoration: none;
             transition: transform 0.2s, box-shadow 0.2s;
+            opacity: 0;
+            animation: fadeInUp 0.5s ease forwards;
         }
+        .btn:nth-child(1) { animation-delay: 0.2s; }
+        .btn:nth-child(2) { animation-delay: 0.3s; }
+        .btn:nth-child(3) { animation-delay: 0.4s; }
+        .btn:nth-child(4) { animation-delay: 0.5s; }
+        .btn:nth-child(5) { animation-delay: 0.6s; }
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
         .btn-primary {
             background: #2c5282;
@@ -51,25 +94,28 @@
             text-align: left;
             font-size: 14px;
             color: #888;
-            margin: 30px 0 15px 0;
+            margin: 25px 0 12px 0;
             border-bottom: 1px solid #ddd;
             padding-bottom: 5px;
         }
     </style>
 </head>
 <body>
-    <h1>🏥 康舟診所</h1>
-    <p class="subtitle">線上預約系統</p>
-    
-    <div class="section-label">健保門診</div>
-    <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-primary">健保初診</a>
-    <a href="https://pinmed.co/clinic/7e1n8ds1" class="btn btn-primary">健保複診</a>
-    
-    <div class="section-label">快樂減重</div>
-    <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-secondary">快樂減重初診</a>
-    <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-secondary">快樂減重複診</a>
-    
-    <div class="section-label">心理治療</div>
-    <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-therapy">心理治療</a>
+    <div class="container">
+        <img src="logo.png" alt="康舟診所" class="logo">
+        <h1>康舟診所</h1>
+        <p class="subtitle">線上預約系統</p>
+        
+        <div class="section-label">健保門診</div>
+        <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-primary">健保初診</a>
+        <a href="https://pinmed.co/clinic/7e1n8ds1" class="btn btn-primary">健保複診</a>
+        
+        <div class="section-label">快樂減重</div>
+        <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-secondary">快樂減重初診</a>
+        <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-secondary">快樂減重複診</a>
+        
+        <div class="section-label">心理治療</div>
+        <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-therapy">心理治療</a>
+    </div>
 </body>
 </html>
