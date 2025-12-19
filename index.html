@@ -12,7 +12,7 @@
             font-family: sans-serif;
             min-height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('background.png') center/cover no-repeat fixed;
+                        url('background.png.png') center/cover no-repeat fixed;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -38,14 +38,13 @@
                 transform: translateY(0);
             }
         }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         .logo {
             width: 120px;
             margin-bottom: 20px;
-            animation: fadeIn 1s ease;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
         h1 {
             color: #2c5282;
@@ -67,13 +66,13 @@
             text-decoration: none;
             transition: transform 0.2s, box-shadow 0.2s;
             opacity: 0;
-            animation: fadeInUp 0.5s ease forwards;
+            animation: fadeIn 0.5s ease forwards;
         }
-        .btn:nth-child(1) { animation-delay: 0.2s; }
-        .btn:nth-child(2) { animation-delay: 0.3s; }
-        .btn:nth-child(3) { animation-delay: 0.4s; }
-        .btn:nth-child(4) { animation-delay: 0.5s; }
-        .btn:nth-child(5) { animation-delay: 0.6s; }
+        .btn-1 { animation-delay: 0.1s; }
+        .btn-2 { animation-delay: 0.2s; }
+        .btn-3 { animation-delay: 0.3s; }
+        .btn-4 { animation-delay: 0.4s; }
+        .btn-5 { animation-delay: 0.5s; }
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(0,0,0,0.2);
@@ -102,20 +101,20 @@
 </head>
 <body>
     <div class="container">
-        <img src="logo.png" alt="康舟診所" class="logo">
+        <img src="logo.png.png" alt="康舟診所" class="logo">
         <h1>康舟診所</h1>
         <p class="subtitle">線上預約系統</p>
         
         <div class="section-label">健保門診</div>
-        <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-primary">健保初診</a>
-        <a href="https://pinmed.co/clinic/7e1n8ds1" class="btn btn-primary">健保複診</a>
+        <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-primary btn-1">健保初診</a>
+        <a href="https://pinmed.co/clinic/7e1n8ds1" class="btn btn-primary btn-2">健保複診</a>
         
         <div class="section-label">快樂減重</div>
-        <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-secondary">快樂減重初診</a>
-        <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-secondary">快樂減重複診</a>
+        <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-secondary btn-3">快樂減重初診</a>
+        <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-secondary btn-4">快樂減重複診</a>
         
         <div class="section-label">心理治療</div>
-        <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-therapy">心理治療</a>
+        <a href="https://pinmed.co/clinic/7e1n8ds1?openAppointment=true&utm_source=google_reserve&utm_medium=organic&utm_campaign=google_reserve_appointment_redirect&hl=zh-TW&gei=k9pEaaq1G6Os5NoPv9XkwAc&rwg_token=ACgRB3fdnhNRVcTWojiTuz4V0eiZ8RbHiZt1Sr8UP-W3OrCcwNkKXB8FpoM1mvP4m05YUqvJcklvVtMdkXqA3D7Qn5jDhaYfCg%3D%3D" class="btn btn-therapy btn-5">心理治療</a>
     </div>
 </body>
 </html>
